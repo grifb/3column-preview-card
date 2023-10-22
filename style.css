@@ -1,0 +1,136 @@
+:root {
+    /* Fonts */
+    --ff-heading: 'Big Shoulders Display', sans-serif;
+    --ff-body: 'Lexend Deca', sans-serif;
+
+    /* Primary */
+    --bright-orange: hsl(31, 77%, 52%);
+    --dark-cyan: hsl(184, 100%, 22%);
+    --very-dark-cyan: hsl(179, 100%, 13%);
+
+    /* Neutral */
+    --transparent-white: hsla(0, 0%, 100%, 0.75);
+    --very-light-gray: hsl(0, 0%, 95%);
+}
+
+body {
+    background-color: var(--very-light-gray);
+    min-height: 100svh;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: grid;
+    place-items: center;
+    min-height: 100svh;
+}
+
+.cars-container {
+    display: flex;
+    flex-direction: row;
+    height: 32rem;
+    min-width: 60rem;
+    color: var(--very-light-gray);
+}
+
+.cars-container > .car-col:first-child {
+    border-radius: 0.5rem 0 0 0.5rem;
+}
+
+.cars-container > .car-col:last-child {
+    border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.car-col {
+    flex-grow: 1;
+    background-color: var(--_column-color);
+}
+
+.car-info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    align-items: flex-start; height: 100%;
+    width: 75%;
+    margin: auto;
+    padding: 2rem 0 2rem 0;
+    max-width: 23ch;
+}
+
+.car-info img {
+    display: block;
+}
+
+.car-info h2 {
+    font-family: var(--ff-heading);
+    font-weight: 700;
+    font-size: 2.8rem;
+    text-transform: uppercase;
+    margin-bottom: 10%;
+} 
+
+.car-info p {
+    color: var(--transparent-white);
+    font-size: 0.9375rem;
+    font-family: var(--ff-body);
+    font-weight: 400;
+    line-height: 1.8;
+}
+
+.car-info button {
+    display: block;
+    cursor: pointer;
+    font-size: 0.9375rem;
+    font-family: var(--ff-body);
+    font-weight: 400;
+    padding: 1rem 2rem 1rem 2rem;
+    border-radius: 2rem;
+    border: 0.15rem solid white;
+    background-color: var(--very-light-gray);
+    color: var(--_column-color);
+    margin-top: 15%;
+}
+
+.car-info button:hover {
+    background-color: transparent;
+    color: var(--very-light-gray);
+}
+
+.sedan {
+    --_column-color: var(--bright-orange);
+}
+
+.suv {
+    --_column-color: var(--dark-cyan);
+} 
+
+.luxury {
+    --_column-color: var(--very-dark-cyan);
+}
+
+@media (max-width: 375px) {
+    .container {
+        display: block;
+    } 
+
+    .cars-container {
+        flex-direction: column;
+        width: 20rem;
+        min-width: 20rem;
+        min-height: 52rem;
+        margin: 5rem auto 5rem auto;
+    }
+
+    .cars-container > .car-col:first-child {
+        border-radius: 0.5rem 0.5rem 0 0;
+    }
+
+    .cars-container > .car-col:last-child {
+        border-radius: 0 0 0.5rem 0.5rem;
+    }
+
+    .car-info {
+        max-width: 26ch;
+    }
+}
